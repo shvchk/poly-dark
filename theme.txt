@@ -18,11 +18,11 @@ terminal-border: "0"
   height = 60%
   item_font = "Unifont Regular 18"
   item_color = "#777777"
-  selected_item_color = "#444444"
+  selected_item_color = "#999999"
   item_height = 40
   item_spacing = 4
   item_pixmap_style = "item_*.png"
-  selected_item_pixmap_style = "selected_item_*.png"
+  selected_item_pixmap_style = "selected_item_6_*.png"
 }
 
 # Countdown message

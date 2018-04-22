@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-THEME='poly-light'
+THEME='poly-dark'
 LANG='English'
 
 # Pre-authorise sudo
