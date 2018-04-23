@@ -22,7 +22,7 @@ terminal-border: "0"
   item_height = 40
   item_spacing = 4
   item_pixmap_style = "item_*.png"
-  selected_item_pixmap_style = "selected_item_6_*.png"
+  selected_item_pixmap_style = "selected_item_*.png"
 }
 
 # Countdown message
