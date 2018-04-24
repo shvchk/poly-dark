@@ -18,3 +18,10 @@ Screenshot is intentionally low res to fit GitHub UI. See also: [1280×720](http
 
 2. **Easier, less secure way** — just download and run install script:  
     `wget -O - https://github.com/shvchk/poly-dark/raw/master/install.sh | bash`
+
+---
+
+### See also
+
+- [Poly light GRUB theme](https://github.com/shvchk/poly-light)
+- [Fallout GRUB theme](https://github.com/shvchk/fallout-grub-theme)
