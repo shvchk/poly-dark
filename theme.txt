@@ -36,6 +36,8 @@ terminal-border: "0"
   # text = "Start in %d Sekunden."
   # EN
   text = "Booting in %d seconds"
+  # ES
+  # text = "Arranque en% d segundos"
   # FR
   # text = "Démarrage automatique dans %d secondes"
   # NO
@@ -48,8 +50,6 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
   # text = "在 %d 内启动"
-  # ES 
-  # text = "Arranque en% d segundos"
   color = "#777777"
   font = "Unifont Regular 18"
 }
@@ -64,6 +64,8 @@ terminal-border: "0"
   # text = "System mit ↑ und ↓ auswählen und mit Enter bestätigen."
   # EN
   text = "Use ↑ and ↓ keys to change selection, Enter to confirm"
+  # ES
+  # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
   # FR
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
   # NO
@@ -76,8 +78,6 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
-  # ES
-  # text = "Use las teclas ↑ y ↓ para cambiar la selección, Enter para confirmar"
   color = "#777777"
   font = "Unifont Regular 18"
 }
