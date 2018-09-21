@@ -66,7 +66,7 @@ wget -O ${TMP_FILE} https://github.com/shvchk/${THEME}/archive/master.zip
 
 if [ ! -f ${TMP_FILE} ]; then
     echo 'ERROR: Failed to download theme archive. Cannot continue.'
-    exit 1
+    exit 3
 fi
 
 echo "Unpacking theme to temp. directory ${TMP_DIR}"
@@ -74,7 +74,7 @@ unzip ${TMP_FILE}
 
 if [ ! -d ${TMP_DIR} ]; then
     echo 'ERROR: Failed to extract theme assets. Cannot continue.'
-    exit 2
+    exit 3
 fi
 
 if [[ "$LANG" != "English" ]]
