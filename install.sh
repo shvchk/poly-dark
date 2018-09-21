@@ -61,10 +61,10 @@ fi
 
 
 echo 'Fetching theme archive'
-wget https://github.com/shvchk/${THEME}/archive/master.zip
+wget --output-file=/tmp/master.zip https://github.com/shvchk/${THEME}/archive/master.zip
 
 echo 'Unpacking theme'
-unzip master.zip
+unzip /tmp/master.zip -d /tmp/${THEME}-master
 
 if [[ "$LANG" != "English" ]]
 then
@@ -95,7 +95,7 @@ echo 'Adding theme to GRUB config'
 echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${THEME}/theme.txt" | sudo tee -a /etc/default/grub
 
 echo 'Removing theme installation files'
-rm -rf master.zip ${THEME}-master
+rm -rf /tmp/master.zip /tmp/${THEME}-master
 
 echo 'Updating GRUB'
 if [[ $UPDATE_GRUB ]]; then
