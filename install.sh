@@ -55,7 +55,7 @@ if [ -e /etc/os-release ]; then
 
     elif [[ "$ID" =~ (centos|fedora|opensuse) || \
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
-            
+
         GRUB_DIR='grub2'
         UPDATE_GRUB='grub2-mkconfig -o /boot/grub2/grub.cfg'
     fi
@@ -84,11 +84,12 @@ then
               -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${TMP_DIR}/theme.txt
 fi
 
-echo 'Creating GRUB themes directory'
-sudo mkdir -p /boot/${GRUB_DIR}/themes/${THEME}
+GRUB_THEME_DIR="/boot/${GRUB_DIR}/themes/${THEME}"
+echo "Creating GRUB themes directory: ${GRUB_THEME_DIR}"
+sudo mkdir -p ${GRUB_THEME_DIR}
 
 echo 'Copying theme to GRUB themes directory'
-sudo cp -r ${THEME}-master/* /boot/${GRUB_DIR}/themes/${THEME}
+sudo cp -r ${TMP_DIR}/* ${GRUB_THEME_DIR}
 
 echo 'Removing other themes from GRUB config'
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub
@@ -103,7 +104,7 @@ echo 'Adding new line to GRUB config just in case' # optional
 echo | sudo tee -a /etc/default/grub
 
 echo 'Adding theme to GRUB config'
-echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${THEME}/theme.txt" | sudo tee -a /etc/default/grub
+echo "GRUB_THEME=${GRUB_THEME_DIR}/theme.txt" | sudo tee -a /etc/default/grub
 
 echo 'Removing temp. theme installation files'
 rm -rf ${TMP_FILE} ${TMP_DIR}
