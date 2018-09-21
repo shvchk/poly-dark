@@ -2,6 +2,8 @@
 
 THEME='poly-dark'
 LANG='English'
+TMP_FILE="/tmp/${THEME}-master.zip"
+TMP_DIR="/tmp/${THEME}-master"
 
 # Pre-authorise sudo
 sudo echo
@@ -59,18 +61,27 @@ if [ -e /etc/os-release ]; then
     fi
 fi
 
+echo "Downloading theme archive to temp. file ${TMP_FILE}"
+wget -O ${TMP_FILE} https://github.com/shvchk/${THEME}/archive/master.zip
 
-echo 'Fetching theme archive'
-wget --output-file=/tmp/master.zip https://github.com/shvchk/${THEME}/archive/master.zip
+if [ ! -f ${TMP_FILE} ]; then
+    echo 'ERROR: Failed to download theme archive. Cannot continue.'
+    exit 1
+fi
 
-echo 'Unpacking theme'
-unzip /tmp/master.zip -d /tmp/${THEME}-master
+echo "Unpacking theme to temp. directory ${TMP_DIR}"
+unzip ${TMP_FILE}
+
+if [ ! -d ${TMP_DIR} ]; then
+    echo 'ERROR: Failed to extract theme assets. Cannot continue.'
+    exit 2
+fi
 
 if [[ "$LANG" != "English" ]]
 then
     echo "Changing language to ${LANG}"
     sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
-              -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${THEME}-master/theme.txt
+              -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${TMP_DIR}/theme.txt
 fi
 
 echo 'Creating GRUB themes directory'
@@ -94,8 +105,8 @@ echo | sudo tee -a /etc/default/grub
 echo 'Adding theme to GRUB config'
 echo "GRUB_THEME=/boot/${GRUB_DIR}/themes/${THEME}/theme.txt" | sudo tee -a /etc/default/grub
 
-echo 'Removing theme installation files'
-rm -rf /tmp/master.zip /tmp/${THEME}-master
+echo 'Removing temp. theme installation files'
+rm -rf ${TMP_FILE} ${TMP_DIR}
 
 echo 'Updating GRUB'
 if [[ $UPDATE_GRUB ]]; then
