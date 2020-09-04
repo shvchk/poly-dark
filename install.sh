@@ -72,6 +72,11 @@ if [[ -e /etc/os-release ]]; then
         fi
 
         UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
+
+        # BLS etries have 'kernel' class, copy corresponding icon
+        if [[ -d /boot/loader/entries && -e ${THEME}-master/icons/${ID}.png ]]; then
+            cp ${THEME}-master/icons/${ID}.png ${THEME}-master/icons/kernel.png
+        fi
     fi
 fi
 
