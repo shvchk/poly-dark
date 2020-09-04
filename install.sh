@@ -28,8 +28,7 @@ LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
 PS3='Please select language #: '
 select l in "${LANG_NAMES[@]}"
 do
-    if [[ -v LANGS[$l] ]]
-    then
+    if [[ -v LANGS[$l] ]]; then
         LANG=$l
         break
     else
@@ -40,8 +39,15 @@ done < /dev/tty
 # Detect distro and set GRUB location and update method
 GRUB_DIR='grub'
 UPDATE_GRUB=''
+BOOT_MODE='legacy'
 
-if [ -e /etc/os-release ]; then
+if [[ -d /boot/efi && -d /sys/firmware/efi ]]; then
+    BOOT_MODE='UEFI'
+fi
+
+echo "Boot mode: ${BOOT_MODE}"
+
+if [[ -e /etc/os-release ]]; then
 
     source /etc/os-release
 
@@ -59,10 +65,15 @@ if [ -e /etc/os-release ]; then
             "$ID_LIKE" =~ (fedora|rhel|suse) ]]; then
 
         GRUB_DIR='grub2'
-        UPDATE_GRUB='grub2-mkconfig -o /boot/grub2/grub.cfg'
+        GRUB_CFG='/boot/grub2/grub.cfg'
+
+        if [[ "$BOOT_MODE" = "UEFI" ]]; then
+            GRUB_CFG="/boot/efi/EFI/${ID}/grub.cfg"
+        fi
+
+        UPDATE_GRUB="grub2-mkconfig -o ${GRUB_CFG}"
     fi
 fi
-
 
 echo 'Fetching theme archive'
 wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
@@ -70,8 +81,7 @@ wget -O ${THEME}.zip https://github.com/shvchk/${THEME}/archive/master.zip
 echo 'Unpacking theme'
 unzip ${THEME}.zip
 
-if [[ "$LANG" != "English" ]]
-then
+if [[ "$LANG" != "English" ]]; then
     echo "Changing language to ${LANG}"
     sed -i -r -e '/^\s+# EN$/{n;s/^(\s*)/\1# /}' \
               -e '/^\s+# '"${LANGS[$LANG]}"'$/{n;s/^(\s*)#\s*/\1/}' ${THEME}-master/theme.txt
