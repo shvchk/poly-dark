@@ -82,8 +82,8 @@ if [[ -e /etc/os-release ]]; then
 
     source /etc/os-release
 
-    if [[ "$ID" =~ (debian|ubuntu|solus) || \
-          "$ID_LIKE" =~ (debian|ubuntu) ]]; then
+    if [[ "$ID" =~ (debian|ubuntu|solus|void) || \
+          "$ID_LIKE" =~ (debian|ubuntu|void) ]]; then
 
         UPDATE_GRUB='update-grub'
 
