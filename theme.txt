@@ -42,8 +42,6 @@ terminal-border: "0"
   # text = "Démarrage automatique dans %d secondes"
   # IT
   # text = "Avvio in %d secondi"
-  # LV
-  # text = "Inicializē pēc %d sekundēm"
   # NO
   # text = "Starter om %d sekunder"
   # PT
@@ -62,7 +60,7 @@ terminal-border: "0"
   font = "Unifont Regular 18"
 }
 
-# Navigation keys hint
+# Navigation keys hint 
 + label {
   left = 0
   top = 100%-24
@@ -78,8 +76,6 @@ terminal-border: "0"
   # text = "Choisissez le système avec les flèches du clavier (↑ et ↓), puis validez avec la touche Enter (↲)"
   # IT
   # text = "Usa i tasti ↑ e ↓ per cambiare la selezione, premi Invio ↲ per confermare"
-  # LV
-  # text = "Izmantojiet ↑ un ↓ bultiņas, lai mainītu izvēli, Enter ↲, lai apstiprinātu."
   # NO
   # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
   # PT
