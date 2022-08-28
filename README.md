@@ -1,6 +1,6 @@
 ## Poly dark GRUB theme
 
-Supported languages: Chinese (simplified), English, French, German, Italian, Norwegian, Portuguese, Russian, Rusyn, Spanish, Turkish, Ukrainian
+Supported languages: Chinese (simplified), English, French, German, Italian, Latvian, Norwegian, Portuguese, Russian, Rusyn, Spanish, Turkish, Ukrainian
 
 ![](https://i.imgur.com/OHGyR2N.gif)
 
