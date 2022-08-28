@@ -62,7 +62,7 @@ terminal-border: "0"
   font = "Unifont Regular 18"
 }
 
-# Navigation keys hint 
+# Navigation keys hint
 + label {
   left = 0
   top = 100%-24
