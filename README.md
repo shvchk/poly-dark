@@ -19,6 +19,21 @@ Screenshot is intentionally low res to fit GitHub UI. See also: [1280×720](http
 2. **Easier, less secure way** — just download and run install script:  
     `wget -O - https://github.com/shvchk/poly-dark/raw/master/install.sh | bash`
 
+
+You can use `--lang` option to select language and disable interactive language selection, e.g.:
+
+```sh
+bash /tmp/install.sh --lang German
+```
+
+or
+
+```sh
+wget -O- https://github.com/shvchk/poly-dark/raw/master/install.sh | bash -s -- --lang Korean
+```
+
+Full list of languages see in `INSTALLER_LANGS` variable in [install.sh](install.sh)
+
 ---
 
 ### See also
