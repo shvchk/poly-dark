@@ -44,10 +44,14 @@ terminal-border: "0"
   # text = "A kijelölt bejegyzés automatikusan elindul %d másodperc múlva."
   # IT
   # text = "Avvio in %d secondi"
+  # KO
+  # text = "%d 초 후 부팅됩니다."
   # LV
   # text = "Inicializē pēc %d sekundēm."
   # NO
   # text = "Starter om %d sekunder"
+  # PL
+  # text = "Start w ciągu %d sekund"
   # PT
   # text = "Arranque automático dentro de %d segundos"
   # RU
@@ -60,6 +64,8 @@ terminal-border: "0"
   # text = "Автоматичне завантаження розпочнеться через %d сек."
   # zh_CN
   # text = "在 %d 内启动"
+  # zh_TW
+  # text = "在 %d 內啟動"
   color = "#777777"
   font = "Unifont Regular 18"
 }
@@ -82,10 +88,14 @@ terminal-border: "0"
   # text = "A kiemelt elem kijelöléséhez használja a(z) ↑ és ↓ billentyűket!"
   # IT
   # text = "Usa i tasti ↑ e ↓ per cambiare la selezione, premi Invio ↲ per confermare"
+  # KO
+  # text = "↑와 ↓ 키를 눌러 항목을 이동하며, Enter를 눌러 선택합니다."
   # LV
   # text = "Izmantojiet ↑ un ↓ bultiņas, lai mainītu izvēli, Enter ↲, lai apstiprinātu."
   # NO
   # text = "Bruk ↑ og ↓ for å endre menyvalg, velg med Enter"
+  # PL
+  # text = "Użyj klawiszy ↑ i ↓ aby wybrać, Enter aby zatwierdzić."
   # PT
   # text = "Use as teclas ↑ e ↓ para mudar a seleção, e ENTER para confirmar"
   # RU
@@ -98,6 +108,8 @@ terminal-border: "0"
   # text = "Використовуйте ↑ та ↓ для вибору, Enter для підтвердження"
   # zh_CN
   # text = "使用 ↑ 和 ↓ 键移动选择条，Enter 键确认"
+  # zh_TW
+  # text = "使用 ↑ 和 ↓ 鍵移動選擇，Enter 鍵繼續"
   color = "#777777"
   font = "Unifont Regular 18"
 }
