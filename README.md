@@ -11,27 +11,27 @@ Screenshot is intentionally low res to fit GitHub UI. See also: [1280×720](http
 
 ### Installation / update
 
-1. **Secure way:**
+- **Secure way:**
 
-    - Download install script:
-
-      ```sh
-      wget -P /tmp https://github.com/shvchk/poly-dark/raw/master/install.sh
-      ```
-
-    - Review it at `/tmp/install.sh`
-
-    - Run it:
-
-      ```sh
-      bash /tmp/install.sh
-      ```
-
-2. **Easier, less secure way** — just download and run install script:
+  - Download install script:
 
     ```sh
-    wget -O - https://github.com/shvchk/poly-dark/raw/master/install.sh | bash
+    wget -P /tmp https://github.com/shvchk/poly-dark/raw/master/install.sh
     ```
+
+  - Review it at `/tmp/install.sh`
+
+  - Run it:
+
+    ```sh
+    bash /tmp/install.sh
+    ```
+
+- **Easier, less secure way** — just download and run install script:
+
+  ```sh
+  wget -O - https://github.com/shvchk/poly-dark/raw/master/install.sh | bash
+  ```
 
 <br>
 
